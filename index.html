@@ -1,8 +1,45 @@
-内容を変更しました。
+<!DOCTYPE html>
+<html lang="en">
 
-Gitは3階層
-    ローカルリポジトリ(ここに履歴がたまる)
-    　　↑コミット
-    インデックス(準備場所)
-    　　↑ステージング
-    ワークツリー(作業フォルダ)
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <div id="app">
+
+    <p v-once>{{message}}</p>
+
+    <a href="{{url}}">あきらめないで</a>
+
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'HelloWorld!',
+        number: 3,
+        ok: false,
+        url: 'https://google.com'
+      },
+      methods: {
+        reverseMessage: function () {
+          this.message = this.message.split('').reverse().join('')
+        },
+        sayHi: function () {
+          this.message = 'Hello VueJS'
+          return `${this.message}を扱います。`;
+        }
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>
